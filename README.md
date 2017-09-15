@@ -57,4 +57,4 @@ echo crayon('text')->green()->underline()->bold(); // returns underlined bold gr
 
 ## License
 
-GPL-2.0 Willi Eßer
+GPL-2.0 © Willi Eßer
