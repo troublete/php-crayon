@@ -1,5 +1,9 @@
-# Crayon [![Build Status](https://travis-ci.org/troublete/crayon.svg)](https://travis-ci.org/troublete/crayon)
+# Crayon
 > A simple functional PHP library for formatting string output 🌈
+
+[![Build Status](https://travis-ci.org/troublete/crayon.svg)](https://travis-ci.org/troublete/crayon)
+
+## Preview
 
 ![preview](preview.png)
 
