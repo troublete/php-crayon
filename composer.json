@@ -1,6 +1,6 @@
 {
     "name": "troublete/crayon",
-    "description": "A simple color string lib for PHP.",
+    "description": "A simple functional PHP library for formatting string output",
     "type": "library",
     "license": "GPL-2.0",
     "authors": [
