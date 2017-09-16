@@ -50,4 +50,13 @@ class ColorTest extends \Codeception\Test\Unit
 		$text = crayon('text')->cyan();
 		$this->assertEquals("\e[36mtext\e[0m", (string) $text);
 	}
+	
+	public function testRedBackground()
+	{
+		$text = crayon('text')->red()->background();
+		$this->assertEquals("\e[41mtext\e[0m", (string) $text);
+
+		$text = crayon('text')->background()->red();
+		$this->assertEquals("\e[41mtext\e[0m", (string) $text);
+	}
 }

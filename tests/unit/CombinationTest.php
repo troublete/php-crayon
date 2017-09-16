@@ -1,6 +1,6 @@
 <?php
 
-use function Crayon\text as crayon;
+use function Crayon\{success, error, text as crayon};
 
 class CombinationTest extends \Codeception\Test\Unit
 {
@@ -25,5 +25,17 @@ class CombinationTest extends \Codeception\Test\Unit
 	{
 		$text = crayon('text')->red()->italic()->bold()->underline();
 		$this->assertEquals("\e[31m\e[1m\e[3m\e[4mtext\e[0m", (string) $text);
+	}
+
+	public function testError()
+	{
+		$text = error('text');
+		$this->assertEquals("\e[31m\e[1m\e[4mtext 𝙭\e[0m", (string) $text);
+	}
+
+	public function testSuccess()
+	{
+		$text = success('text');
+		$this->assertEquals("\e[32m\e[1mtext ✔\e[0m", (string) $text);
 	}
 }
