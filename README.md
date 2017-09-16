@@ -30,11 +30,15 @@ and return as string. Formatting calls may be chained.
 <?php
 require_once 'path/to/vendor/autoload.php';
 
-use function Crayon\text as crayon;
+use function Crayon\{text as crayon, error, success};
 
 echo crayon('text')->green(); // returns green text
 echo crayon('text')->green()->bold(); // returns bold green text
 echo crayon('text')->green()->underline()->bold(); // returns underlined bold green text
+echo crayon('text')->green()->underline()->bold()->background(); // returns underlined bold green backgrounded text
+
+echo success('text'); // returns green bold text with checkmark at the end
+echo error('text'); // returns red bold text with x at the end
 ```
 
 ## API
@@ -58,6 +62,8 @@ echo crayon('text')->green()->underline()->bold(); // returns underlined bold gr
 #### `->magenta()` – sets text color to magenta
 
 #### `->cyan()` – sets text color to cyan
+
+#### `->background()` – turns coloring from fore to background coloring
 
 ## License
 
