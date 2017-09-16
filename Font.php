@@ -64,6 +64,12 @@ class Font
 	private $color;
 
 	/**
+	 * sets the information that the color should be applied as background
+	 * @var bool
+	 */
+	private $background = false;
+
+	/**
 	 * Font constructor.
 	 * @param string $text
 	 */
@@ -157,6 +163,20 @@ class Font
 	}
 
 	/**
+	 * function to set color as background
+	 * @return Font
+	 */
+	public function background(): Font
+	{
+		if ($this->color !== null) {
+			$this->turnToBackground();
+		}
+
+		$this->background = true;
+		return $this;
+	}
+
+	/**
 	 * function to prepare and render the text with set font options
 	 * @return string
 	 */
@@ -180,6 +200,22 @@ class Font
 	private function color(string $color): Font
 	{
 		$this->color = $color;
+
+		if ($this->background) {
+			$this->turnToBackground();
+		}
+
 		return $this;
+	}
+
+	/**
+	 * function to convert color to background color
+	 */
+	private function turnToBackground()
+	{
+		$this->color = preg_replace_callback('/\\e\[(?<color>\d+)m/', function ($matches) {
+			$new_color = $matches['color'] + 10;
+			return "\e[{$new_color}m";
+		}, $this->color);
 	}
 }
