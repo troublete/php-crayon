@@ -9,3 +9,4 @@ echo crayon('italic')->italic() . "\n";
 echo crayon('underline')->underline() . "\n";
 echo crayon('color')->green() . "\n";
 echo crayon('combinations')->green()->bold()->underline() . "\n";
+echo crayon('combinations')->green()->bold()->underline()->background() . "\n";
