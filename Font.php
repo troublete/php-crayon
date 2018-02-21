@@ -184,12 +184,12 @@ class Font
     {
         $reset = self::RESET;
 
-        $color = $this->color ?? '';
-        $bold = $this->bold ? self::BOLD : '';
-        $italic = $this->italic ? self::ITALIC : '';
-        $underline = $this->underline ? self::UNDERLINE : '';
+        $font_color = $this->color ?? '';
+        $is_bold = $this->bold ? self::BOLD : '';
+        $is_italic = $this->italic ? self::ITALIC : '';
+        $is_underline = $this->underline ? self::UNDERLINE : '';
 
-        return "{$color}{$bold}{$italic}{$underline}{$this->text}{$reset}";
+        return "{$font_color}{$is_bold}{$is_italic}{$is_underline}{$this->text}{$reset}";
     }
 
     /**
