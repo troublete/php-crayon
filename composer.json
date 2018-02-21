@@ -11,13 +11,13 @@
     ],
     "minimum-stability": "stable",
     "autoload": {
-    	"files": [
-    		"./crayon.php",
-    		"./colors.php"
-    	],
-    	"psr-4": {
-    		"Crayon\\": "./"
-    	}
+        "files": [
+            "./crayon.php",
+            "./colors.php"
+        ],
+        "psr-4": {
+            "Crayon\\": "./"
+        }
     },
     "require": {
         "php": ">=7.0"

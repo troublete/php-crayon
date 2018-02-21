@@ -7,7 +7,7 @@ namespace Crayon;
  * @return Font
  */
 function text(string $text): Font {
-	return new Font($text);
+    return new Font($text);
 }
 
 /**
@@ -16,7 +16,7 @@ function text(string $text): Font {
  * @return Font
  */
 function success(string $text): Font {
-	return text("$text ✔")->green()->bold();
+    return text("$text ✔")->green()->bold();
 }
 
 /**
@@ -25,5 +25,5 @@ function success(string $text): Font {
  * @return Font
  */
 function error(string $text): Font {
-	return text("$text 𝙭")->red()->bold()->underline();
+    return text("$text 𝙭")->red()->bold()->underline();
 }

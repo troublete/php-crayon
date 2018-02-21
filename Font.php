@@ -13,209 +13,209 @@ use const Crayon\{RED, GREEN, BLUE, YELLOW, MAGENTA, CYAN};
  */
 class Font
 {
-	/**
-	 * @var string
-	 */
-	const BOLD = "\e[1m";
+    /**
+     * @var string
+     */
+    const BOLD = "\e[1m";
 
-	/**
-	 * @var string
-	 */
-	const ITALIC = "\e[3m";
+    /**
+     * @var string
+     */
+    const ITALIC = "\e[3m";
 
-	/**
-	 * @var string
-	 */
-	const UNDERLINE = "\e[4m";
+    /**
+     * @var string
+     */
+    const UNDERLINE = "\e[4m";
 
-	/**
-	 * @var string
-	 */
-	const RESET = "\e[0m";
+    /**
+     * @var string
+     */
+    const RESET = "\e[0m";
 
-	/**
-	 * the text to be formatted
-	 * @var string|null
-	 */
-	private $text;
+    /**
+     * the text to be formatted
+     * @var string|null
+     */
+    private $text;
 
-	/**
-	 * boolean value to indicate if the text shall be rendered bold
-	 * @var bool
-	 */
-	private $bold = false;
+    /**
+     * boolean value to indicate if the text shall be rendered bold
+     * @var bool
+     */
+    private $bold = false;
 
-	/**
-	 * boolean value to indicate if the text shall be rendered italic
-	 * @var bool
-	 */
-	private $italic = false;
+    /**
+     * boolean value to indicate if the text shall be rendered italic
+     * @var bool
+     */
+    private $italic = false;
 
-	/**
-	 * boolean value to indicate if the text shall be rendered underlined
-	 * @var bool
-	 */
-	private $underline = false;
+    /**
+     * boolean value to indicate if the text shall be rendered underlined
+     * @var bool
+     */
+    private $underline = false;
 
-	/**
-	 * may contain the color format string if available
-	 * @var string|null
-	 */
-	private $color;
+    /**
+     * may contain the color format string if available
+     * @var string|null
+     */
+    private $color;
 
-	/**
-	 * sets the information that the color should be applied as background
-	 * @var bool
-	 */
-	private $background = false;
+    /**
+     * sets the information that the color should be applied as background
+     * @var bool
+     */
+    private $background = false;
 
-	/**
-	 * Font constructor.
-	 * @param string $text
-	 */
-	public function __construct(string $text)
-	{
-		$this->text = $text;
-	}
+    /**
+     * Font constructor.
+     * @param string $text
+     */
+    public function __construct(string $text)
+    {
+        $this->text = $text;
+    }
 
-	/**
-	 * function to set text bold
-	 * @return Font
-	 */
-	public function bold(): Font
-	{
-		$this->bold = true;
-		return $this;
-	}
+    /**
+     * function to set text bold
+     * @return Font
+     */
+    public function bold(): Font
+    {
+        $this->bold = true;
+        return $this;
+    }
 
-	/**
-	 * function to set text italic
-	 * @return Font
-	 */
-	public function italic(): Font
-	{
-		$this->italic = true;
-		return $this;
-	}
+    /**
+     * function to set text italic
+     * @return Font
+     */
+    public function italic(): Font
+    {
+        $this->italic = true;
+        return $this;
+    }
 
-	/**
-	 * function to set text underlined
-	 * @return Font
-	 */
-	public function underline(): Font
-	{
-		$this->underline = true;
-		return $this;
-	}
+    /**
+     * function to set text underlined
+     * @return Font
+     */
+    public function underline(): Font
+    {
+        $this->underline = true;
+        return $this;
+    }
 
-	/**
-	 * function to color the text red
-	 * @return Font
-	 */
-	public function red(): Font
-	{
-		return $this->color(RED);
-	}
+    /**
+     * function to color the text red
+     * @return Font
+     */
+    public function red(): Font
+    {
+        return $this->color(RED);
+    }
 
-	/**
-	 * function to color the text green
-	 * @return Font
-	 */
-	public function green(): Font
-	{
-		return $this->color(GREEN);
-	}
+    /**
+     * function to color the text green
+     * @return Font
+     */
+    public function green(): Font
+    {
+        return $this->color(GREEN);
+    }
 
-	/**
-	 * function to color the text yellow
-	 * @return Font
-	 */
-	public function yellow(): Font
-	{
-		return $this->color(YELLOW);
-	}
+    /**
+     * function to color the text yellow
+     * @return Font
+     */
+    public function yellow(): Font
+    {
+        return $this->color(YELLOW);
+    }
 
-	/**
-	 * function to color the text blue
-	 * @return Font
-	 */
-	public function blue(): Font
-	{
-		return $this->color(BLUE);
-	}
+    /**
+     * function to color the text blue
+     * @return Font
+     */
+    public function blue(): Font
+    {
+        return $this->color(BLUE);
+    }
 
-	/**
-	 * function to color the magenta
-	 * @return Font
-	 */
-	public function magenta(): Font
-	{
-		return $this->color(MAGENTA);
-	}
+    /**
+     * function to color the magenta
+     * @return Font
+     */
+    public function magenta(): Font
+    {
+        return $this->color(MAGENTA);
+    }
 
-	/**
-	 * function to color the text cyan
-	 * @return Font
-	 */
-	public function cyan(): Font
-	{
-		return $this->color(CYAN);
-	}
+    /**
+     * function to color the text cyan
+     * @return Font
+     */
+    public function cyan(): Font
+    {
+        return $this->color(CYAN);
+    }
 
-	/**
-	 * function to set color as background
-	 * @return Font
-	 */
-	public function background(): Font
-	{
-		if ($this->color !== null) {
-			$this->turnToBackground();
-		}
+    /**
+     * function to set color as background
+     * @return Font
+     */
+    public function background(): Font
+    {
+        if ($this->color !== null) {
+            $this->turnToBackground();
+        }
 
-		$this->background = true;
-		return $this;
-	}
+        $this->background = true;
+        return $this;
+    }
 
-	/**
-	 * function to prepare and render the text with set font options
-	 * @return string
-	 */
-	public function __toString()
-	{
-		$reset = self::RESET;
-		
-		$color = $this->color ?? '';
-		$bold = $this->bold ? self::BOLD : '';
-		$italic = $this->italic ? self::ITALIC : '';
-	 	$underline = $this->underline ? self::UNDERLINE : '';
+    /**
+     * function to prepare and render the text with set font options
+     * @return string
+     */
+    public function __toString()
+    {
+        $reset = self::RESET;
 
-		return "{$color}{$bold}{$italic}{$underline}{$this->text}{$reset}";
-	}
+        $color = $this->color ?? '';
+        $bold = $this->bold ? self::BOLD : '';
+        $italic = $this->italic ? self::ITALIC : '';
+        $underline = $this->underline ? self::UNDERLINE : '';
 
-	/**
-	 * function to set color to a string
-	 * @param string $color
-	 * @return Font
-	 */
-	private function color(string $color): Font
-	{
-		$this->color = $color;
+        return "{$color}{$bold}{$italic}{$underline}{$this->text}{$reset}";
+    }
 
-		if ($this->background) {
-			$this->turnToBackground();
-		}
+    /**
+     * function to set color to a string
+     * @param string $color
+     * @return Font
+     */
+    private function color(string $color): Font
+    {
+        $this->color = $color;
 
-		return $this;
-	}
+        if ($this->background) {
+            $this->turnToBackground();
+        }
 
-	/**
-	 * function to convert color to background color
-	 */
-	private function turnToBackground()
-	{
-		$this->color = preg_replace_callback('/\\e\[(?<color>\d+)m/', function ($matches) {
-			$new_color = $matches['color'] + 10;
-			return "\e[{$new_color}m";
-		}, $this->color);
-	}
+        return $this;
+    }
+
+    /**
+     * function to convert color to background color
+     */
+    private function turnToBackground()
+    {
+        $this->color = preg_replace_callback('/\\e\[(?<color>\d+)m/', function ($matches) {
+            $new_color = $matches['color'] + 10;
+            return "\e[{$new_color}m";
+        }, $this->color);
+    }
 }
