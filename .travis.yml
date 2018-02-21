@@ -3,5 +3,9 @@ php:
   - '7.0'
   - '7.1'
 before_script: composer install --dev
+addons:
+  sonarcloud:
+    organization: "troublete-github"
 script:
   - vendor/bin/codecept run
+  - sonar-scanner

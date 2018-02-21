@@ -2,6 +2,8 @@
 > A simple functional PHP library for formatting string output 🌈
 
 [![Build Status](https://travis-ci.org/troublete/crayon.svg)](https://travis-ci.org/troublete/crayon)
+[![Technical dept](https://sonarcloud.io/api/project_badges/measure?project=crayon-library&metric=sqale_index)](https://sonarcloud.io/dashboard/index/crayon-library)
+[![Reliability](https://sonarcloud.io/api/project_badges/measure?project=crayon-library&metric=reliability_rating)](https://sonarcloud.io/dashboard/index/crayon-library)
 
 ## Preview
 
